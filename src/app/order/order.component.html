@@ -1,0 +1,12 @@
+<div class="body1">
+    <div *ngIf="product">
+        <h2>Order: {{ product.ProductName }}</h2>
+        <div>
+          <label for="quantity">Quantity:</label>
+          <input type="number" [(ngModel)]="quantity" min="1" max="{{ product.Quantity }}" id="quantity">
+        </div>
+        <button (click)="confirmPurchase()">Confirm Purchase</button>
+    </div>
+
+</div>
+

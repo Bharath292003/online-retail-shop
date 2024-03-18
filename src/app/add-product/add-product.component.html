@@ -1,0 +1,10 @@
+<body class="add-body">
+    <form #productsform = "ngForm" (ngSubmit)="addproduct(productsform.value)" id="form">
+        <label for="">Product Name</label>
+        <input type="text" name="Pname" ngModel>
+
+        <label for="">Product Quantity</label>
+        <input type="text" name="Pquantity" ngModel>
+        <input type="submit" value="Add product" (click)="add()">
+    </form>
+</body>

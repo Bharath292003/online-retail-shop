@@ -1,0 +1,31 @@
+.cart-item {
+    background-color: #f9f9f9; /* Light grey background */
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside each cart item */
+    margin-bottom: 15px; /* Space between cart items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Styling for the details within the cart item */
+.cart-item > div {
+    margin-bottom: 8px; /* Space between each detail */
+    font-size: 16px; /* Slightly larger font size for readability */
+}
+
+/* Common button styling */
+.cart-item button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 8px 12px; /* Padding inside the button */
+    border: none; /* No border for a cleaner look */
+    border-radius: 4px; /* Slightly rounded corners for the buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.2s; /* Smooth transition for background color change */
+    margin-right: 10px; /* Space between buttons */
+}
+
+/* Hover effect for buttons */
+.cart-item button:hover {
+    background-color: grey; /* Grey background on hover */
+}
