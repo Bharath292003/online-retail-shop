@@ -1,23 +1,26 @@
-<div class="body1" >
-<button (click)="Plist()" id="btn" >GET PRODUCTS</button>
+<div class="body1">
+  <button (click)="Plist()" id="btn">GET PRODUCTS</button>
 </div>
 <!-- search box -->
-<form>
-  <input type="text" (input)="filterProducts()" [(ngModel)]="searchTerm"  placeholder="Search products...">
+<!-- <form>
+  <input type="text" (input)="filterProducts()" [(ngModel)]="searchTerm"  name="pname" placeholder="Search products...">
+  <button type="submit">SEARCH</button>
+</form> -->
+
+<form class="pipe-filter">
+  <input type="text" name='searchtext' [(ngModel)]="searchtext" placeholder="search...." aria-label="search">
   <button type="submit">SEARCH</button>
 </form>
 
 
 
-
-
 <div *ngIf="display" class="product-grid">
-  <div *ngFor="let product of filteredProducts" class="product-item">
-      <div class="product-id">ID: {{ product.ProductId }}</div>
-      <div class="product-name">Name: {{ product.ProductName || 'N/A' }}</div>
-      <div class="product-quantity">Quantity: {{ product.Quantity }}</div>
-      <div class="product-status">Status: {{ product.IsActive ? 'Active' : 'Inactive' }}</div>
-      <button (click)="addToCart(product)">Purchase</button>
-      <button (click)="finalcart(product)">AddToCart</button>
+  <div *ngFor="let product of filteredProducts | filter:searchtext" class="product-item">
+    <!-- <div class="product-id">ID: {{ product.ProductId }}</div> -->
+    <div class="product-name">Name: {{ product.ProductName || 'N/A' }}</div>
+    <div class="product-quantity">Quantity: {{ product.Quantity }}</div>
+    <!-- <div class="product-status">Status: {{ product.IsActive ? 'Active' : 'Inactive' }}</div> -->
+    <button (click)="addToCart(product)">Purchase</button>
+    <button (click)="finalcart(product)">AddToCart</button>
   </div>
 </div>

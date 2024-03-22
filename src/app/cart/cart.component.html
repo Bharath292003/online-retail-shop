@@ -6,6 +6,14 @@
     <button (click)="removeFromCart(product.ProductId)">Remove</button>
     <button  (click)="confirmPurchase(product)">Confirm Purchase</button>
   </div>
-  
+  <div *ngIf="celebrationActive" class="celebration">
+    <div class="sparkle"></div><br>
+    <div class="sparkle"></div><br>
+    <div class="sparkle"></div>
+    
+</div>
+<div *ngIf="showTick" class="tick-container">
+    <span class="green-tick">&#10004;</span>
+</div> 
 
   

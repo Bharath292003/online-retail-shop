@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 // import { NgModel,NgForm } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',standalone:true,
@@ -12,7 +13,7 @@ import { NgIf } from '@angular/common';
 })
 export class AddProductComponent {
   readonly addlink="https://uiexercise.theproindia.com/api/Product/AddProduct";
-  constructor(private https:HttpClient){}
+  constructor(private https:HttpClient,private router: Router){}
   
   addproduct(pro:{Pname:string,Pquantity:number}){
     
@@ -21,6 +22,7 @@ export class AddProductComponent {
       Quantity:pro.Pquantity,
       IsActive:true
     }).subscribe((res)=>{
+      this.router.navigate(['/ProductList']);
       console.log(res);})
 }
    add(){

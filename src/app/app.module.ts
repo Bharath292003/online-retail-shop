@@ -10,6 +10,10 @@ import { withComponentInputBinding, Routes ,provideRouter} from '@angular/router
 import { RouterModule } from '@angular/router';
 import { OrderComponent } from './order/order.component';
 import { CartComponent } from './cart/cart.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './filter.pipe';
+
 // import { SearchProductComponent } from './search-product/search-product.component';
 
 
@@ -17,7 +21,9 @@ import { CartComponent } from './cart/cart.component';
   declarations: [
     AppComponent,
     OrderComponent,
-    CartComponent
+    CartComponent,
+    FilterPipe,
+    ProductListComponent,
     
     // SearchProductComponent
 
@@ -25,12 +31,14 @@ import { CartComponent } from './cart/cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductListComponent,
     HttpClientModule,
     AddProductComponent,
     FormsModule,
     RouterModule,
-
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    }),
     // SearchProductComponent
   ],
  

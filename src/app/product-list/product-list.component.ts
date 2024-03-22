@@ -7,19 +7,20 @@ import { Router } from '@angular/router';
 import { CartService } from '../cart.service';
 
 @Component({
-  standalone:true,
+  // standalone:true,
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
-  imports: [NgFor,JsonPipe,NgIf,FormsModule]
+  // imports: [NgFor,JsonPipe,NgIf,FormsModule]
 })
 export class ProductListComponent {
    readonly getch = 'https://uiexercise.theproindia.com/api/Product/GetAllProduct'
    products : ProductData[]=[];
    display=false;
    searchTerm: string = '';
+   searchtext:string ='';
   filteredProducts: ProductData[] =[];
-  //  products: any[] = []; 
+   
   
   filterProducts() {
     this.filteredProducts = this.searchTerm
